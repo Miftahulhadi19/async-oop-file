@@ -71,18 +71,31 @@
 // console.log(employe, manager);
 
 // Class super method
-class Shape {
-  pain() {
-    console.log('pain shape created');
+// class Shape {
+//   pain() {
+//     console.log('pain shape created');
+//   }
+// }
+
+// class Circle extends Shape {
+//   pain() {
+//     super.pain();
+//     console.log('pain circle created');
+//   }
+// }
+
+// const circle = new Circle();
+// circle.pain();
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
   }
 }
-
-class Circle extends Shape {
-  pain() {
-    super.pain();
-    console.log('pain circle created');
-  }
-}
-
-const circle = new Circle();
-circle.pain();
+Person.prototype.sayHello = function sayHello(name) {
+  console.log(`Hallo ${name} my Name is ${this.name}`);
+};
+const Hadi = new Person('Hadi', 'sama');
+console.log(Hadi);
+Hadi.sayHello('Miftahul');
